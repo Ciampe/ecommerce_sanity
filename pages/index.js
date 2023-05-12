@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import { client } from '../lib/client';
 
@@ -9,13 +10,16 @@ const Home = ({ products, bannerData }) => {
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}/>
       <div className='products-heading'>
-        <h2>Best Seller products</h2>
-        <p>Speakers of many variation</p>
+        <h2>¡Nuestros productos más buscados!</h2>
+        <p>Cosmética - Perfumería - Belleza</p>
       </div>
 
       <div className='products-container'>
         {products?.map((product) => <Product key={product._id} product={product} />)}
       </div>
+      <Link href={`/products`}>
+        <button type="button" className='all-products' onClick={() => {}}>Ver todos los productos</button>
+      </Link>
 
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
