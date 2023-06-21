@@ -171,10 +171,10 @@ width: 100%;
 }
 .hero-banner-image{
   position: absolute;
-  top: 0%;
-  right:20%;
-  width: 450px;
-  height: 450px;
+  top: 20%;
+  right:25%;
+  width: 300px;
+  height: 300px;
 }
 
 
@@ -192,7 +192,8 @@ flex-direction: column;
 .desc p{
   color: #5f5f5f;
   font-weight: 100;
-text-align: end;
+  text-align: end;
+  color: black;
 }
 .desc h5{
   margin-bottom: 12px;
@@ -218,7 +219,8 @@ text-align: end;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  /*background-color: #f02d34; ORIGINAL */
+  background-color: #fc466b;
   border-radius: 15px;
   position: relative;
   height: 400px;
@@ -254,8 +256,10 @@ text-align: end;
   position: absolute;
   /* top: -35%;
   left: 8%; */
-  top: -25%;
-  left: 25%;
+  top: 20%;
+  left: 40%;
+  width: 200px;
+  height: 250px;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -420,6 +424,26 @@ padding: 30px 65px;
 .btn:hover{
   transform: scale(1.1,1.1);
 }
+.wsp-btn{
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 12px;
+  border-radius: 15px;
+  border: none;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-top: 60px;
+  text-transform: uppercase;
+  background-color: rgb(37, 211, 102);
+  color: #fff;
+  rx: 12;
+  cursor: pointer;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+.wsp-btn:hover{
+  transform: scale(1.1,1.1);
+}
 .product-detail-container{
   display: flex;
  gap: 40px;
@@ -514,7 +538,6 @@ padding: 30px 65px;
 }
 .buttons .buy-now{
   width: 200px;
-
   padding: 10px 20px;
   background-color: #f02d34;
   color: white;
@@ -529,9 +552,25 @@ padding: 30px 65px;
 .buttons .buy-now:hover{
   transform:scale(1.1,1.1)
 }
+.buttons .all-products{
+  width: 200px;
+  padding: 10px 20px;
+  background-color: #f02d34;
+  color: white;
+  border: none;
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+   transform: scale(1, 1);
+  transition: transform 0.5s ease;
+}
+.buttons .all-products:hover{
+  transform:scale(1.1,1.1)
+}
 .quantity-desc{
   border: 1px solid gray;
-padding: 6px;
+  padding: 6px;
 }
 .quantity-desc span{
   font-size: 16px;
@@ -629,10 +668,10 @@ margin-top: 160px;
     height: 560px;
   }
   .hero-banner-image{
-    width: 77%;
-    height: 62%;
-    top: -2%;
-    right: -6%;
+    width: 38%;
+    height: 42%;
+    top: 20%;
+    right: -1%;
   }
   .footer-banner-container{
     height: 560px;
@@ -712,6 +751,9 @@ margin-top: 160px;
   .buttons .buy-now{
     width: 150px;
   }
+  .buttons .all-products{
+    width: 150px;
+  }
   .product-detail-container{
     margin: 20px;
   }
@@ -766,4 +808,23 @@ margin-top: 160px;
   width: 300px;
   margin: auto;
 }
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
 }

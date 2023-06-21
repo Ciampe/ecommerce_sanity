@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -6,11 +6,16 @@ import { toast } from 'react-hot-toast';
 
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Cart() {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext(); 
-
+  console.log(cartItems)
+  let messageText = 'Hola! Quisiera hacer el siguiente pedido: '
+    cartItems.map((item) => {
+      messageText = messageText + item.quantity + ' x ' + item.name + ' '
+    })
   return (
     <div className='cart-wrapper' ref={cartRef}>
       <div className='cart-container'>
@@ -20,21 +25,21 @@ function Cart() {
           onClick={() => setShowCart(false)}
         >
           <AiOutlineLeft />
-          <span className='heading'>Your Cart</span>
-          <span className='cart-num-items'>({totalQuantities} items)</span>
+          <span className='heading'>Tu carrito</span>
+          <span className='cart-num-items'>({totalQuantities} producto{`${totalQuantities > 1 ? 's' : ''}`})</span>
         </button>
 
         {cartItems.length < 1 && (  
           <div className='empty-cart'>
               <AiOutlineShopping size={150} />
-              <h3>Your shopping bag is empty</h3>
+              <h3>Tu carrito está vacío</h3>
               <Link href="/">
                 <button
                   type='button'
                   onClick={() => setShowCart(false)}
                   className='btn'
                 >
-                  Continue shopping
+                  Continuar comprando
                 </button>
               </Link>
           </div>
@@ -91,13 +96,13 @@ function Cart() {
               <h3>${totalPrice}</h3>
             </div>
             <div className='btn-container'>
-              <button
-                type='button'
-                className='btn'
-                onClick=""
+              <a
+                href={`https://wa.me/5493416361889?text=${messageText}`}
+                target='_blank'
+                className='wsp-btn'
               >
-                Pay with Stripe
-              </button>
+                Continuar a WhatsApp
+              </a>
             </div>
           </div>
         )}
